@@ -168,8 +168,12 @@ def custom_index(input_list, value):
         1
 
     """
+    index = 0
+    for item in input_list:
+        if item == value:
+            return index
+        index += 1
 
-    return 0
 
 
 def custom_count(input_list, value):
