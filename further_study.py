@@ -83,7 +83,13 @@ def custom_extend(input_list, second_list):
 
     """
 
-    pass
+    for item in second_list:
+        custom_append(input_list, item)
+
+
+
+# Go through items in second list
+# Add each item to the first list with custom_append
 
 
 def custom_insert(input_list, index, value):
