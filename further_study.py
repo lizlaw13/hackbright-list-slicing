@@ -152,9 +152,9 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
-    init(input_list)
-    return last(input_list)
-
+    last_item = last(input_list)
+    del input_list[-1]
+    return last_item
 
 def custom_index(input_list, value):
     """Return the index of the first item of value found in input_list.
@@ -211,8 +211,16 @@ def custom_reverse(input_list):
         True
 
     """
+    index = 0
 
-    pass
+    list_length = custom_len(input_list)
+    for item in input_list:
+        if index == list_length:
+            break
+        custom_insert(input_list,index,custom_pop(input_list))
+        index += 1
+
+    # print(input_list)
 
 
 def custom_contains(input_list, value):
@@ -232,7 +240,14 @@ def custom_contains(input_list, value):
 
     """
 
-    return None
+    for item in input_list:
+        # print(item)
+        if item == value:
+            return True
+
+    return False
+
+    
 
 
 def custom_equality(some_list, another_list):
